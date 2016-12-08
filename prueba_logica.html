@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>jsGeork. Herramienta JavaScript para crear actividades educativas.</title>
+    <meta name="Description" content="Motor opensource JavaScript/HTML5 para generar actividades educativas y tests para la web" />
+    <meta name="Keywords" content="educación actividades ejercicios educativos enseñanza test evaluar generar codigo fuente abierto librería plugin javascript interactivos" />
+    <meta name="author" content="Jordi cavallé" />
+	<meta name="abstract" content="Generador de ejercicios, actividades y test para la educación" />
+	<meta name="copyright" content="© 2014 Jordi Cavallé" />
+	<link rel="canonical" href="http://jsgeork.geork.com/" />
+    <link href="styles/index.css" rel="stylesheet" />
+        <link href="styles/generator.css" rel="stylesheet" />
+    <link href="jsgeork/jquery.jsgeork.css" rel="stylesheet" />
+       <script src="js/jquery.js"></script>
+    <script src="jsgeork/jquery.jsgeork.js"></script>
+    <link href="jsgeork/jquery.jsgeork.css" rel="stylesheet" />
+
+    
+</head>
+<body>
+    <div id="cuerpo">
+    <div class="title">
+        
+		<div class="logo"> <img src="img/poliedro.gif"/>        Matemáticas Discretas </div>
+
+        <nav>
+            <a href="index.html">Principal</a>
+            <a href="index.html#descargas">Descargas</a>
+            <a href="index.html#Enlaces">Enlaces</a>
+            <a href="menu_pruebas.html">Prueba</a>
+
+        </nav>
+    </div>
+            <div id="inicio">
+                <center><h1>Prueba de Logica</h1></center>
+
+ <body>
+
+<p>Primera tabla de evaluación de las mismas actividades con actualización automática cada 5 segundos y umbral de puntuación al 50% sobre una base de 100, es decir 50 puntos 
+    necesarios para superar el umbral.
+</p>
+
+<!-- $addjqueryhead$ -->
+<!-- $addjsgeorkhead$ -->
+<div id="test_ej_1">
+</div>
+
+<br /><br />
+
+<!-- <div id="test_ej_2">
+</div>-->
+    <div data-info-ko="evalacts" style="display: none;">
+        <p>Complete las actividades y actualice la tabla hasta que las supere.<br />
+            (<em>este contenido se muestra mientras no se realicen todas las actividades y se supere el umbral de nota, establecido en este caso al 50%</em>)
+        </p>
+    </div>
+<!--<div data-info-ok="test_ej_2" style="display: none;">
+    <p>Muy bien. Ha superado las actividades con nota. <br />
+        (<em>este contenido se muestra cuando se completan todas las actividades
+        con una nota igual o superior al umbral, propiedad 'threshold' con valor inicial del 100%</em>)
+    </p>
+</div>-->
+
+
+
+<script>
+    jQuery(function ($) {
+
+        jsGeork.Questions.Eval({ id: "test_ej_1" }, obj_single_ej_1, obj_multi_ej_1, obj_input_ej3, obj_gapfill_ej_4, obj_multi_ej_5);
+        var obj_test_ej_2 = {
+            "id": "test_ej_2",
+            //"icons": "csshexent",
+            "qbase": 100,
+            "threshold": 50,
+            "refresh": false,
+            "timer": "5s"
+        };
+        
+
+    });
+</script>
+
+
+<!-- $addjqueryhead$ -->
+<!-- $addjsgeorkhead$ -->
+<div id="single_ej_1">
+   <p> Los lógicos suelen afirmar que existen ciertas palabras cuyo significado trasciende todo tema particular y, por tanto, se les puede considerar "palabras lógicas". La palabra "y" y la palabra "o", son dos ejemplos. ¿Se te ocurren otros ejemplos?  </p>
+   <div style="display: none;" aria-hidden="true">
+       <div data-info-ok="single_ej_1">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva bien -->
+           <span class="CSSMsgSuccess">OK</span>
+       </div>
+       <div data-info-ko="single_ej_1">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva mal -->
+           <span class="CSSMsgFail">¡ERROR!</span>
+       </div>
+       <div data-opt="opta"></div>
+       <div data-opt="optb"></div>
+       <div data-opt="optc"></div>
+       <div data-opt="optd"></div>
+   </div>
+</div>
+
+
+<script>
+    var obj_single_ej_1 = {
+        "id": "single_ej_1",
+        "type": "single",
+        "opt": [
+            {
+                "text": "si, entonces no, si solo si.",
+                "answer": "opta",
+                "weight": 100
+            },
+            {
+                "text": "casi, no siempre, nunca",
+                "answer": "optb",
+                "weight": 0
+            }
+        ],
+        "fieldset": true,
+        "legend": "Pregunta 1",
+        "optsuccess": true,
+        "hint": true,
+        "random": true,
+        "weighting": 100,
+        "lighting": 0,
+        "icons": "csshexent",
+        "storage": "local",
+        "storagekey": "georkgenej",
+        "showstorage": true,
+        //"fillfromstorage": true,
+        "delstorage": true
+    };
+    jsGeork.Questions.Question(obj_single_ej_1);
+</script>
+
+
+<!-- $addjqueryhead$ -->
+<!-- $addjsgeorkhead$ -->
+<div id="multi_ej_1">
+   <p>Ocúpese de asignar valores a las proposiciones siguientes (a este, los lógicos lo llaman un ejercicio de interpretación en lógica proposicional): </p>
+   <div style="display: none;" aria-hidden="true">
+       <div data-info-ok="multi_ej_1">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva bien -->
+           <span class="CSSMsgSuccess">OK</span>
+       </div>
+       <div data-info-ko="multi_ej_1">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva mal -->
+           <span class="CSSMsgFail">¡ERROR!</span>
+       </div>
+       <div data-opt="opta"></div>
+       <div data-opt="optb"></div>
+       <div data-opt="optc"></div>
+       <div data-opt="optd"></div> 
+       <div data-opt="opte"></div>
+       <div data-opt="optf"></div>
+       <div data-opt="optg"></div>
+   </div>
+</div>
+
+
+<script>
+    var obj_multi_ej_1 = {
+        "id": "multi_ej_1",
+        "type": "multi",
+        "opt": [
+            {
+                "text": "p = 3 es menor que 5, p = V",
+                "answer": "opta",
+                "select": true
+            },
+            {
+                "text": "q = un triángulo tiene 4 lados, q = F",
+                "answer": "optb",
+                "select": true
+            },
+            {
+                "text": "r = Ecuador está en America, r = V",
+                "answer": "optc",
+                "select": true
+            },
+            {
+                "text": "s = Existe un círculo perfecto, s = F",
+                "answer": "optd",
+                "select": false
+            },
+            {
+                "text": "w = El rey de Venezuela es ateo, w = V",
+                "answer": "opte",
+                "select": false
+            },
+            {
+                "text": "z = la oración z es improbable, z = V",
+                "answer": "optf",
+                "select": true
+            },
+            {
+                "text": "t = Los rectángulos son obligatorios, t = V",
+                "answer": "optg",
+                "select": false
+            }
+        ],
+        "fieldset": true,
+        "legend": "Pregunta 2",
+        "optsuccess": true,
+        "hint": true,
+        "random": true,
+        "weighting": 100,
+        "lighting": 0,
+        "icons": "csshexent",
+        "storage": "local",
+        "storagekey": "georkgenej",
+        "showstorage": true,
+        //"fillfromstorage": true,
+        "delstorage": true
+    };
+    jsGeork.Questions.Question(obj_multi_ej_1);
+</script>
+
+
+<!-- $addjqueryhead$ -->
+<!-- $addjsgeorkhead$ -->
+<div id="input_ej3">
+<span data-makeqs="input_ej3">
+   Una proposición es una oración que se puede asociar con un valor de verdad. Es decir, puede ser verdadera o falsa. El lenguaje de la lógica proposicional, o lógica de enunciados, se construye sobre proposiciones. Algunas veces las proposiciones son representadas por letras como p, q, r, s, w. Para decir que p es ________ decimos que p = V. Dualmente, p es falsa si p = _______ <span data-input-make="box1"></span>
+</span>
+<!-- botones -->
+<span data-input-btnchek="input_ej3"></span><span data-input-btnhint="input_ej3"></span>
+<div data-info-hint="input_ej3" style="display: none;" aria-hidden="true">
+   ... y ...
+</div>
+<div data-input-showinfo="input_ej3">
+   <!-- muestra información sobre los intentos y aciertos -->
+</div>
+<div data-info-ok="input_ej3" style="display: none;" aria-hidden="true">
+   <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva bien -->
+   <span class="CSSMsgSuccess">¡CORRECTO!</span>
+</div>
+<div data-info-ko="input_ej3" style="display: none;" aria-hidden="true">
+   <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva mal -->
+   <span class="CSSMsgFail">¡ERROR!</span>
+</div>
+<div data-stored-results="input_ej3">
+   <!-- mostrará los resultados previos -->
+</div>
+</div> <!-- end div id=input_ej3 -->
+
+
+<script>
+    var obj_input_ej3 = {
+        "id": "input_ej3",
+        "type": "input",
+        "boxs": {
+            "box1": {
+                "type": "text",
+                "values": ["Verdad y Falso"],
+                "min": 23,
+                "max": 24,
+                "weight": 100,
+                "placeholder": "?",
+                "autocomplete": "",
+                "adjustgaps": "size",
+                "aria-label": "once más doce y medio"
+            }
+        },
+        "fieldset": true,
+        "button": "Chequea",
+        "legend": "Pregunta 3",
+        "hint": true,
+        "btnhint": "Ayuda",
+        "weighting": 100,
+        "lighting": 0,
+        "icons": "csshexent",
+        "storage": "local",
+        "storagekey": "georkgenej",
+        "showstorage": true,
+        //"fillfromstorage": true,
+        "delstorage": true
+    };
+    jsGeork.Questions.Question(obj_input_ej3);
+</script>
+
+
+
+<!-- $addjqueryhead$ -->
+<!-- $addjsgeorkhead$ -->
+<div id="gapfill_ej_4">
+   <p data-makeqs="gapfill_ej_4"> El "ó" de un lenguaje natural, como el Español, se llama en lógica "o exclusivo", mientras que el "o" simple en lógica suele ser el "o" inclusivo. Construya la tabla de verdad para el o exclusivo (o excluyente): ”.<span data-gap-select="gap1">(verdad verdad = V)</span>.</p>
+   <div style="display: none;" aria-hidden="true">
+       <div data-info-ok="gapfill_ej_4">
+           <!-- El interior de este bloque se mostrará cuando se resuelva bien la actividad -->
+           <span class="CSSMsgSuccess">¡CORRECTO!</span>
+       </div>
+       <div data-info-ko="gapfill_ej_4">
+           <!-- El interior de este bloque se mostrará cuando se resuelva mal la actividad -->
+           <span class="CSSMsgFail">¡ERROR!</span>
+       </div>
+   </div>
+</div>
+
+<script>
+    var obj_gapfill_ej_4 = {
+        "id": "gapfill_ej_4",
+        "type": "gapfill",
+        "gaps": {
+            "gap1": {
+                "words": ['(verdad falso = v)', '(falso verdad = f)', '(falso falso = v)'],
+                "showwords": true,
+                "casesensitive": false,
+                "placeholder": "?",
+                "autocomplete": "",
+                "adjustgaps": "all",
+                "weight": 100
+            }
+        },
+        "attempts": 5,
+        "fieldset": true,
+        "legend": "Pregunta 4",
+        "name": "Pregunta 4",
+        "button": "",
+        "hint": true,
+        "btnhint": "",
+        "weighting": 100,
+        "lighting": 0,
+        "icons": "csshexent",
+        "storage": "local",
+        "storagekey": "georkgenej",
+        "showstorage": true,
+        //"fillfromstorage": true,
+        "delstorage": true
+        //"oncomplete": function () { alert("oncomplete\n\nattempts: " + this.attempts + "\nscore: " + this.score); }
+    };
+    jsGeork.Questions.Question(obj_gapfill_ej_4);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="multi_ej_5">
+   <p>Semantica de si ... entonces ...</p>
+   <div style="display: none;" aria-hidden="true">
+       <div data-info-ok="multi_ej_5">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva bien -->
+           <span class="CSSMsgSuccess">OK</span>
+       </div>
+       <div data-info-ko="multi_ej_5">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva mal -->
+           <span class="CSSMsgFail">¡ERROR!</span>
+       </div>
+       <div data-opt="opta"></div>
+       <div data-opt="optb"></div>
+       <div data-opt="optc"></div>
+       <div data-opt="optd"></div>
+       <div data-opt="opte"></div>
+   </div>
+</div>
+
+
+<script>
+    var obj_multi_ej_5 = {
+        "id": "multi_ej_5",
+        "type": "multi",
+        "opt": [
+            {
+                "text": "verdad verdad = v",
+                "answer": "opta",
+                "select": false
+            },
+            {
+                "text": "verdad falso = f",
+                "answer": "optb",
+                "select": false
+            },
+            {
+                "text": "falso verdad = v",
+                "answer": "optc",
+                "select": false
+            },
+            {
+                "text": "falso falso = v",
+                "answer": "optd",
+                "select": false
+            },
+            {
+                "text": "Todos los anteriores.",
+                "answer": "opte",
+                "select": true
+            }
+        ],
+        "fieldset": true,
+        "legend": "Pregunta 5",
+        "optsuccess": true,
+        "hint": true,
+        "random": true,
+        "weighting": 100,
+        "lighting": 0,
+        "icons": "csshexent",
+        "storage": "local",
+        "storagekey": "georkgenej",
+        "showstorage": true,
+        //"fillfromstorage": true,
+        "delstorage": true
+    };
+    jsGeork.Questions.Question(obj_multi_ej_5);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+        <center><footer><strong>Este documento fue diseñado por Fatima Domingues para el curso de Matemáticas Discretas U-2016 Universidad de Los Andes.</strong></footer></center>
+		
+		
+	
+</body>
+</html>

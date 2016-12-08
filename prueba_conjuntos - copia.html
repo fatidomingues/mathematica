@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>jsGeork. Herramienta JavaScript para crear actividades educativas.</title>
+    <meta name="Description" content="Motor opensource JavaScript/HTML5 para generar actividades educativas y tests para la web" />
+    <meta name="Keywords" content="educación actividades ejercicios educativos enseñanza test evaluar generar codigo fuente abierto librería plugin javascript interactivos" />
+    <meta name="author" content="Jordi cavallé" />
+	<meta name="abstract" content="Generador de ejercicios, actividades y test para la educación" />
+	<meta name="copyright" content="© 2014 Jordi Cavallé" />
+	<link rel="canonical" href="http://jsgeork.geork.com/" />
+    <link href="styles/index.css" rel="stylesheet" />
+        <link href="styles/generator.css" rel="stylesheet" />
+    <link href="jsgeork/jquery.jsgeork.css" rel="stylesheet" />
+       <script src="js/jquery.js"></script>
+    <script src="jsgeork/jquery.jsgeork.js"></script>
+    <link href="jsgeork/jquery.jsgeork.css" rel="stylesheet" />
+
+    
+</head>
+<body>
+    <div id="cuerpo">
+    <div class="title">
+        
+		<div class="logo"> <img src="img/poliedro.gif"/>        Matemáticas Discretas </div>
+
+        <nav>
+            <a href="index.html">Principal</a>
+            <a href="index.html#descargas">Descargas</a>
+            <a href="index.html#Enlaces">Enlaces</a>
+            <a href="menu_pruebas.html">Prueba</a>
+
+        </nav>
+    </div>
+            <div id="inicio">
+                <center><h1>Pruebas de Conjuntos</h1></center>
+
+ <body>
+
+<p>Primera tabla de evaluación de las mismas actividades con actualización automática cada 5 segundos y umbral de puntuación al 50% sobre una base de 100, es decir 50 puntos 
+    necesarios para superar el umbral.
+</p>
+
+<!-- $addjqueryhead$ -->
+<!-- $addjsgeorkhead$ -->
+<div id="test_ej_1">
+</div>
+
+<br /><br />
+
+<!-- <div id="test_ej_2">
+</div>-->
+    <div data-info-ko="evalacts" style="display: none;">
+        <p>Complete las actividades y actualice la tabla hasta que las supere.<br />
+            (<em>este contenido se muestra mientras no se realicen todas las actividades y se supere el umbral de nota, establecido en este caso al 50%</em>)
+        </p>
+    </div>
+<!--<div data-info-ok="test_ej_2" style="display: none;">
+    <p>Muy bien. Ha superado las actividades con nota. <br />
+        (<em>este contenido se muestra cuando se completan todas las actividades
+        con una nota igual o superior al umbral, propiedad 'threshold' con valor inicial del 100%</em>)
+    </p>
+</div>-->
+
+
+
+<script>
+    jQuery(function ($) {
+
+        jsGeork.Questions.Eval({ id: "test_ej_1" }, obj_single_ej_1, obj_multi_ej_1, obj_input_ej3, obj_gapfill_ej_4, obj_multi_ej_5, obj_multi_ej_6);
+        var obj_test_ej_2 = {
+            "id": "test_ej_2",
+            //"icons": "csshexent",
+            "qbase": 100,
+            "threshold": 50,
+            "refresh": false,
+            "timer": "5s"
+        };
+        
+
+    });
+</script>
+
+
+<!-- $addjqueryhead$ -->
+<!-- $addjsgeorkhead$ -->
+<div id="single_ej_1">
+   <p>Para indicar un conjunto, se escriben sus elementos entre {}, así el conjunto A de los números enteros entre -3 y 4 (ambos incluidos) es: </p>
+   <div style="display: none;" aria-hidden="true">
+       <div data-info-ok="single_ej_1">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva bien -->
+           <span class="CSSMsgSuccess">OK</span>
+       </div>
+       <div data-info-ko="single_ej_1">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva mal -->
+           <span class="CSSMsgFail">¡ERROR!</span>
+       </div>
+       <div data-opt="opta"></div>
+       <div data-opt="optb"></div>
+       <div data-opt="optc"></div>
+       <div data-opt="optd"></div>
+   </div>
+</div>
+
+
+<script>
+    var obj_single_ej_1 = {
+        "id": "single_ej_1",
+        "type": "single",
+        "opt": [
+            {
+                "text": "-3,-2,-1,2,3,4,5",
+                "answer": "opta",
+                "weight": 0
+            },
+            {
+                "text": "-3,-2,-1,2,3,4,",
+                "answer": "optb",
+                "weight": 100
+            }
+        ],
+        "fieldset": true,
+        "legend": "Pregunta 1",
+        "optsuccess": true,
+        "hint": true,
+        "random": true,
+        "weighting": 100,
+        "lighting": 0,
+        "icons": "csshexent",
+        "storage": "local",
+        "storagekey": "georkgenej",
+        "showstorage": true,
+        //"fillfromstorage": true,
+        "delstorage": true
+    };
+    jsGeork.Questions.Question(obj_single_ej_1);
+</script>
+
+
+<!-- $addjqueryhead$ -->
+<!-- $addjsgeorkhead$ -->
+<div id="multi_ej_1">
+   <p>Una noción más básica que la del número es la de conjunto, pero es necesario discutirla y aclararla porque es la base de toda la Matemática. Trate de explicar que es un conjunto:</p>
+   <div style="display: none;" aria-hidden="true">
+       <div data-info-ok="multi_ej_1">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva bien -->
+           <span class="CSSMsgSuccess">OK</span>
+       </div>
+       <div data-info-ko="multi_ej_1">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva mal -->
+           <span class="CSSMsgFail">¡ERROR!</span>
+       </div>
+       <div data-opt="opta"></div>
+       <div data-opt="optb"></div>
+       <div data-opt="optc"></div>
+       <div data-opt="optd"></div>
+   </div>
+</div>
+
+
+<script>
+    var obj_multi_ej_1 = {
+        "id": "multi_ej_1",
+        "type": "multi",
+        "opt": [
+            {
+                "text": "Una colección de elementos considerada en sí misma como un objeto.",
+                "answer": "opta",
+                "select": true
+            },
+            {
+                "text": "Conjunto de personas, animales o cosas que están juntos o reunidos o que tienen alguna característica común.",
+                "answer": "optb",
+                "select": false
+            },
+            {
+                "text": "Es un sistema algebraico formado por un conjunto no vacío y dos operaciones internas.",
+                "answer": "optc",
+                "select": false
+            },
+            {
+                "text": "Ninguna de las anteriores.",
+                "answer": "optd",
+                "select": false
+            }
+        ],
+        "fieldset": true,
+        "legend": "Pregunta 2",
+        "optsuccess": true,
+        "hint": true,
+        "random": true,
+        "weighting": 100,
+        "lighting": 0,
+        "icons": "csshexent",
+        "storage": "local",
+        "storagekey": "georkgenej",
+        "showstorage": true,
+        //"fillfromstorage": true,
+        "delstorage": true
+    };
+    jsGeork.Questions.Question(obj_multi_ej_1);
+</script>
+
+
+<!-- $addjqueryhead$ -->
+<!-- $addjsgeorkhead$ -->
+<div id="input_ej3">
+<span data-makeqs="input_ej3">
+   Formas de definir un Conjunto: = <span data-input-make="box1"></span>
+</span>
+<!-- botones -->
+<span data-input-btnchek="input_ej3"></span><span data-input-btnhint="input_ej3"></span>
+<div data-info-hint="input_ej3" style="display: none;" aria-hidden="true">
+   Comprension y extension
+</div>
+<div data-input-showinfo="input_ej3">
+   <!-- muestra información sobre los intentos y aciertos -->
+</div>
+<div data-info-ok="input_ej3" style="display: none;" aria-hidden="true">
+   <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva bien -->
+   <span class="CSSMsgSuccess">¡CORRECTO!</span>
+</div>
+<div data-info-ko="input_ej3" style="display: none;" aria-hidden="true">
+   <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva mal -->
+   <span class="CSSMsgFail">¡ERROR!</span>
+</div>
+<div data-stored-results="input_ej3">
+   <!-- mostrará los resultados previos -->
+</div>
+</div> <!-- end div id=input_ej3 -->
+
+
+<script>
+    var obj_input_ej3 = {
+        "id": "input_ej3",
+        "type": "input",
+        "boxs": {
+            "box1": {
+                "type": "text",
+                "values": ["Comprension y extension"],
+                "min": 23,
+                "max": 24,
+                "weight": 100,
+                "placeholder": "?",
+                "autocomplete": "",
+                "adjustgaps": "size",
+                "aria-label": "once más doce y medio"
+            }
+        },
+        "fieldset": true,
+        "button": "Chequea",
+        "legend": "Pregunta 3",
+        "hint": true,
+        "btnhint": "Ayuda",
+        "weighting": 100,
+        "lighting": 0,
+        "icons": "csshexent",
+        "storage": "local",
+        "storagekey": "georkgenej",
+        "showstorage": true,
+        //"fillfromstorage": true,
+        "delstorage": true
+    };
+    jsGeork.Questions.Question(obj_input_ej3);
+</script>
+
+
+
+<!-- $addjqueryhead$ -->
+<!-- $addjsgeorkhead$ -->
+<div id="gapfill_ej_4">
+   <p data-makeqs="gapfill_ej_4"> Dominio y recorrido de una relación. Sea a R b con a pertenece A y b pertenece B. Se llama dominio de la relación al subconjunto de las a que pertenece A para los cuales vale la relación. Se llama ∈ recorrido o rango de la relación al conjunto de los b para los cuales la relación es válida.  Sea A = {2, 4, 6} B={2, 3, 4, 9} Sea la relación a > b con a pertenece A y b pertenece B. Hallar el dominio de R. <span data-gap-select="gap1">{2,4,6}</span>.</p>
+   <div style="display: none;" aria-hidden="true">
+       <div data-info-ok="gapfill_ej_4">
+           <!-- El interior de este bloque se mostrará cuando se resuelva bien la actividad -->
+           <span class="CSSMsgSuccess">¡CORRECTO!</span>
+       </div>
+       <div data-info-ko="gapfill_ej_4">
+           <!-- El interior de este bloque se mostrará cuando se resuelva mal la actividad -->
+           <span class="CSSMsgFail">¡ERROR!</span>
+       </div>
+   </div>
+</div>
+
+<script>
+    var obj_gapfill_ej_4 = {
+        "id": "gapfill_ej_4",
+        "type": "gapfill",
+        "gaps": {
+            "gap1": {
+                "words": ['{3,5,6}', '{4,5,6}', '{1,2,3}', '{7,8,9}', '{1,1,1}'],
+                "showwords": true,
+                "casesensitive": false,
+                "placeholder": "?",
+                "autocomplete": "",
+                "adjustgaps": "all",
+                "weight": 100
+            }
+        },
+        "attempts": 5,
+        "fieldset": true,
+        "legend": "Pregunta 4",
+        "name": "Pregunta 4",
+        "button": "",
+        "hint": true,
+        "btnhint": "",
+        "weighting": 100,
+        "lighting": 0,
+        "icons": "csshexent",
+        "storage": "local",
+        "storagekey": "georkgenej",
+        "showstorage": true,
+        //"fillfromstorage": true,
+        "delstorage": true
+        //"oncomplete": function () { alert("oncomplete\n\nattempts: " + this.attempts + "\nscore: " + this.score); }
+    };
+    jsGeork.Questions.Question(obj_gapfill_ej_4);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="multi_ej_5">
+   <p>Unión. Sean A y B dos conjuntos. Se llama unión de A y B y se indica A  B al conjunto que tiene los ∪ elementos que están en A o en B o en ambos y sólo dichos elementos. 
+Así si A = {a, b, m, n, p} B = {a, b, s, t, p}  entonces A  B =</p>
+   <div style="display: none;" aria-hidden="true">
+       <div data-info-ok="multi_ej_5">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva bien -->
+           <span class="CSSMsgSuccess">OK</span>
+       </div>
+       <div data-info-ko="multi_ej_5">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva mal -->
+           <span class="CSSMsgFail">¡ERROR!</span>
+       </div>
+       <div data-opt="opta"></div>
+       <div data-opt="optb"></div>
+       <div data-opt="optc"></div>
+       <div data-opt="optd"></div>
+   </div>
+</div>
+
+
+<script>
+    var obj_multi_ej_5 = {
+        "id": "multi_ej_5",
+        "type": "multi",
+        "opt": [
+            {
+                "text": "a,b,p,m,n,s,t",
+                "answer": "opta",
+                "select": true
+            },
+            {
+                "text": "a,b,s,t",
+                "answer": "optb",
+                "select": false
+            },
+            {
+                "text": "a,b,m,n,p,a,b,s,t,p",
+                "answer": "optc",
+                "select": false
+            },
+            {
+                "text": "Ninguna de las anteriores.",
+                "answer": "optd",
+                "select": false
+            }
+        ],
+        "fieldset": true,
+        "legend": "Pregunta 5",
+        "optsuccess": true,
+        "hint": true,
+        "random": true,
+        "weighting": 100,
+        "lighting": 0,
+        "icons": "csshexent",
+        "storage": "local",
+        "storagekey": "georkgenej",
+        "showstorage": true,
+        //"fillfromstorage": true,
+        "delstorage": true
+    };
+    jsGeork.Questions.Question(obj_multi_ej_5);
+</script>
+
+
+
+
+
+
+
+
+<div id="multi_ej_6">
+   <p>Si O es el vacío y E el universal se tiene: =</p>
+   <div style="display: none;" aria-hidden="true">
+       <div data-info-ok="multi_ej_6">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva bien -->
+           <span class="CSSMsgSuccess">OK</span>
+       </div>
+       <div data-info-ko="multi_ej_6">
+           <!-- El interior de este bloque se colocará detrás del botón cuando se resuelva mal -->
+           <span class="CSSMsgFail">¡ERROR!</span>
+       </div>
+       <div data-opt="opta"></div>
+       <div data-opt="optb"></div>
+       <div data-opt="optc"></div>
+       <div data-opt="optd"></div>
+       <div data-opt="opte"></div>
+       <div data-opt="optf"></div>
+   </div>
+</div>
+
+
+<script>
+    var obj_multi_ej_6 = {
+        "id": "multi_ej_6",
+        "type": "multi",
+        "opt": [
+            {
+                "text": "A unido A' = E",
+                "answer": "opta",
+                "select": true
+            },
+            {
+                "text": "A interceptado A' = E",
+                "answer": "optb",
+                "select": false
+            },
+            {
+                "text": "A unido O = E",
+                "answer": "optc",
+                "select": false
+            },
+            {
+                "text": "A unido E = E",
+                "answer": "optd",
+                "select": true
+            },
+
+            {
+                "text": "A unido E = 0",
+                "answer": "optd",
+                "select": false
+            },
+
+            {
+                "text": "E' = E",
+                "answer": "optd",
+                "select": false
+            }
+        ],
+        "fieldset": true,
+        "legend": "Pregunta 6",
+        "optsuccess": true,
+        "hint": true,
+        "random": true,
+        "weighting": 100,
+        "lighting": 0,
+        "icons": "csshexent",
+        "storage": "local",
+        "storagekey": "georkgenej",
+        "showstorage": true,
+        //"fillfromstorage": true,
+        "delstorage": true
+    };
+    jsGeork.Questions.Question(obj_multi_ej_6);
+</script>
+
+
+
+                
+        <center><footer><strong>Este documento fue diseñado por Fatima Domingues para el curso de Matemáticas Discretas U-2016 Universidad de Los Andes.</strong></footer></center>
+		
+		
+	
+</body>
+</html>
